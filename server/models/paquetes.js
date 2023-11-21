@@ -3,6 +3,11 @@ const { DataTypes } = require('sequelize');
 
 const Paquete = sequelize.define('paquetes', 
     {
+    idPaquete: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true, 
+    },
     descripcion: {
         type: DataTypes.STRING,
     },
@@ -27,6 +32,12 @@ const Paquete = sequelize.define('paquetes',
     updatedAt:{
         type:DataTypes.DATE
     },
+    idUsuario:{
+        type:DataTypes.INTEGER
+    },
+    paquetePadreId:{
+        type:DataTypes.INTEGER
+    }
 },
 {
     tableName:'paquetes',

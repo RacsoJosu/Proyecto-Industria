@@ -3,6 +3,11 @@ const { DataTypes } = require('sequelize');
 
 
 const Ubicacion = sequelize.define('ubicaciones', {
+    idUbicacion: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true, 
+    },
     latitud: {
       type: DataTypes.FLOAT,
     },
@@ -11,6 +16,9 @@ const Ubicacion = sequelize.define('ubicaciones', {
     },
     fechaHora: {
       type: DataTypes.DATE,
+    },
+    idPaquete:{
+      type:DataTypes.INTEGER
     },
     createdAt:{
         type:DataTypes.DATE
