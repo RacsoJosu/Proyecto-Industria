@@ -5,12 +5,10 @@ const { handleHttpError } = require('../utils/handleError');
 const getPackages = async (req,res)=>{
 
     try {
-        const {body} = req
-        const packages = await findAllPackages({
-            where:{
-                
-            }
-        })
+
+        const {id} = req.params
+
+        const packages = await findAllPackages(id)
         res.json({packages})
     } catch (error) {
         console.log({error})

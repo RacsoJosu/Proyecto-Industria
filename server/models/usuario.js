@@ -15,11 +15,21 @@ const Usuario = sequelize.define('usuarios',
         type: DataTypes.STRING,
         unique: true,
     },
-    contraseña: {
+    contrasenia: {
         type: DataTypes.STRING,
     },
     tipo: {
         type: DataTypes.ENUM('admin', 'user'),
+        defaultValue:"user"
+    },
+    numero_telefono:{
+        type: DataTypes.STRING,
+    },
+    pais:{
+        type: DataTypes.STRING,
+    },
+    ciudad:{
+        type: DataTypes.STRING,
     },
     createdAt:{
         type:DataTypes.DATE

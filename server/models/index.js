@@ -9,7 +9,9 @@ models.UsuarioModel.Paquetes= models.UsuarioModel.hasMany(models.PaqueteModel,{
     foreignKey:"idUsuario"
 });
 
-models.PaqueteModel.Usuario = models.PaqueteModel.belongsTo(models.UsuarioModel)
+models.PaqueteModel.Usuario = models.PaqueteModel.belongsTo(models.UsuarioModel,{
+    foreignKey:"idUsuario"
+})
 
 
 
@@ -18,7 +20,9 @@ models.PaqueteModel.PaquetesHijos= models.PaqueteModel.hasMany(models.PaqueteMod
     foreignKey:"paquetePadreId"
 });
 
-models.PaqueteModel.PaquetePadre = models.PaqueteModel.belongsTo(models.PaqueteModel)
+models.PaqueteModel.PaquetePadre = models.PaqueteModel.belongsTo(models.PaqueteModel,{
+    foreignKey:"paquetePadreId"
+})
 
 
 
@@ -29,7 +33,9 @@ models.PaqueteModel.Ubicaciones= models.PaqueteModel.hasMany(models.UbicacionMod
     foreignKey:"idPaquete"
 });
 
-models.UbicacionModel.Paquete= models.UbicacionModel.belongsTo(models.PaqueteModel)
+models.UbicacionModel.Paquete= models.UbicacionModel.belongsTo(models.PaqueteModel, {
+    foreignKey:"idPaquete"
+})
 
 
 
